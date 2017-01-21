@@ -21,6 +21,9 @@ ReactDOM.render(
 // import React from 'react';
 // import ReactDOM from 'react-dom';
 // import LandingPage from './components/landingpage/index';
+
+// import 'normalize-css/normalize.css';
+// import 'skeleton-css/css/skeleton.css';
 // import './index.css';
 
 // ReactDOM.render(
