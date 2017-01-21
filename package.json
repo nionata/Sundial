@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "normalize-css": "^2.3.1",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "skeleton-css": "^2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
