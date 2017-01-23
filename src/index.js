@@ -1,15 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App.js';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import App from './components/App.js'
+import rootReducer from './reducers'
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
-import './index.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap-theme.css'
+import './index.css'
+
+var store = createStore(rootReducer)
 
 ReactDOM.render(
-  <App />,
+  <Provider store={ store }>
+    <App />
+  </Provider>
+  ,
   document.getElementById('root')
-);
+)
 
 /* ==============================================
  * Uncomment the code below and comment the code
