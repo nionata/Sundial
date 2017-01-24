@@ -2,14 +2,22 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import App from './components/App.js'
-import rootReducer from './reducers'
 
+//import components
+import App from './components/App'
+import rootReducer from './reducers'
+import teams from './testData/teams'
+
+//import styles
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 import './index.css'
 
-var store = createStore(rootReducer)
+const defaultState = {
+  teams
+}
+
+const store = createStore(rootReducer, defaultState)
 
 ReactDOM.render(
   <Provider store={ store }>
