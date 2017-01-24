@@ -9,8 +9,6 @@ import rootReducer from './reducers'
 import teams from './testData/teams'
 
 //import styles
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/css/bootstrap-theme.css'
 import './index.css'
 
 const defaultState = {

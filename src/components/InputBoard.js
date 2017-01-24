@@ -21,7 +21,7 @@ class InputBoard extends React.Component {
         )
     }
 
-    handleAddItem(e){
+    handleAddItem(e) {
         e.preventDefault()
         this.setState({
             toggleAddItem: !this.state.toggleAddItem
@@ -31,7 +31,8 @@ class InputBoard extends React.Component {
     render() {
         return (
             <div className="container">
-                <table className="table table-stripe">
+                
+                <table className="table table-striped">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -53,7 +54,7 @@ class InputBoard extends React.Component {
                         {this.state.toggleAddItem ? this.renderInputForm() : null}
                     </tbody>
                 </table>
-                <a href="#" onClick={this.handleAddItem}>add item</a>
+                <a href="#" onClick={this.handleAddItem}>Add more member...</a>
                 <button type="button" className="btn btn-default pull-right">Sundial!</button>
             </div>
         )

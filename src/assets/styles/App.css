@@ -1,29 +1,31 @@
-
-.container {
-  margin: 10px;
-}
-
+/********/
+/*HEADER*/
+/********/
 .App-logo {
   /*animation: App-logo-spin infinite 20s linear;*/
   height: 40px;
 }
 
 .App-header {
- 
   padding: 10px;
   background-color: #433633;
   color: white;
 }
 
+
+/******/
+/*BODY*/
+/******/
 .App-body {
   font-size: large;
   padding: 20px;
 }
 
-.header-title{
-  display: inline;
- 
+.App-input-board-container{
+  margin-bottom:20px;
 }
+
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
