@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import sundialLogo from '../../assets/images/favicon-32x32.png';
+import './navbar.css';
 
 class NavBar extends Component {
   render() {
