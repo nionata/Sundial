@@ -42,7 +42,9 @@ header a:hover {
 FEATURE BOXES
 =========== */
 #features {
-  padding-bottom: 10%; }
+  padding-bottom: 10%;
+  padding-top: 70px;
+  margin-top: -70px; }
 
 /* ===========
 FEATURE HIGHLIGHT
