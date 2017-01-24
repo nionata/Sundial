@@ -1,6 +1,9 @@
 /* ===========
 LAYOUT
 =========== */
+body {
+  padding-top: 50px;}
+
 .wrapper {
   color: #433633;
   max-width: 960px;
