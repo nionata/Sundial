@@ -6,13 +6,13 @@ import { Provider } from 'react-redux'
 //import components
 import App from './components/App'
 import rootReducer from './reducers'
-import teams from './testData/teams'
+import team from './testData/team'
 
 //import styles
 import './index.css'
 
 const defaultState = {
-  teams
+  team
 }
 
 const store = createStore(rootReducer, defaultState)

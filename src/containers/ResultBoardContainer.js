@@ -2,7 +2,7 @@ import ResultBoard from '../components/ResultBoard'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
-    teams: state.teams
+    team: state.team
 })
 
 const mapDispatchToProps = (dispatch) => ({

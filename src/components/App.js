@@ -22,7 +22,6 @@ class App extends Component {
             <InputBoardContainer />
           </div>
           <ResultBoardContainer />
-
         </div>
       </div>
     );

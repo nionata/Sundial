@@ -5,6 +5,7 @@ class InputBoard extends React.Component {
         super(props)
         this.renderInputForm = this.renderInputForm.bind(this)
         this.handleAddItem = this.handleAddItem.bind(this)
+        this.renderMember = this.renderMember.bind(this)
 
         this.state = {
             toggleAddItem: true
@@ -28,29 +29,32 @@ class InputBoard extends React.Component {
         })
     }
 
+    renderMember(item, index) {
+        return (
+            <tr key={index}>
+                <td>{item.name}</td>
+                <td>{item.timezone}</td>
+                <td>{item.availTime}</td>
+            </tr>
+        )
+    }
+
     render() {
         return (
             <div className="container">
-                
+
                 <table className="table table-striped">
                     <thead>
+                     
                         <tr>
                             <th>Name</th>
-                            <th>Timezones</th>
+                            <th>Timezone</th>
                             <th>Availability</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>@ejour</td>
-                            <td>+8</td>
-                            <td>2pm - 4pm</td>
-                        </tr>
-                        <tr>
-                            <td>@nionata</td>
-                            <td>-2</td>
-                            <td>2pm - 4pm</td>
-                        </tr>
+                    {this.props.team.members.map(this.renderMember)}
+                       
                         {this.state.toggleAddItem ? this.renderInputForm() : null}
                     </tbody>
                 </table>
