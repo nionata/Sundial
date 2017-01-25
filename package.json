@@ -5,7 +5,8 @@
   "homepage": "https://meerkats-sundial.github.io/sundial-frontend",
   "devDependencies": {
     "gh-pages": "^0.12.0",
-    "react-scripts": "0.8.5"
+    "react-scripts": "0.8.5",
+    "redux-logger": "^2.7.4"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
