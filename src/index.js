@@ -1,21 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-//import components
 import App from './components/App'
-import rootReducer from './reducers'
-import team from './testData/team'
+import store from './store'
 
 //import styles
 import './index.css'
 
-const defaultState = {
-  team
-}
-
-const store = createStore(rootReducer, defaultState)
 
 ReactDOM.render(
   <Provider store={ store }>
