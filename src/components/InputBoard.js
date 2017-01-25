@@ -5,59 +5,97 @@ class InputBoard extends React.Component {
         super(props)
         this.renderInputForm = this.renderInputForm.bind(this)
         this.handleAddItem = this.handleAddItem.bind(this)
+        this.renderMember = this.renderMember.bind(this)
+        this.handleOnSave = this.handleOnSave.bind(this)
 
+        //local state
         this.state = {
-            toggleAddItem: true
+            isAddingItem: false //Booean value to enable or disable inputform
         }
     }
 
     renderInputForm() {
         return (
             <tr>
-                <td><input type="text" className="form-control" /></td>
-                <td><input type="text" className="form-control" /></td>
-                <td><input type="text" className="form-control" /></td>
+                <td><input type="text" ref="inputName" className="form-control" /></td>
+                <td><input type="text" ref="inputTimezone" className="form-control" /></td>
+                <td><input type="text" ref="inputAvailTime" className="form-control" /></td>
             </tr>
         )
     }
 
-    handleAddItem(e){
+    renderMember(item, index) {
+        return (
+            <tr key={index}>
+                <td>{item.name}</td>
+                <td>{item.timezone}</td>
+                <td>{item.availTime}</td>
+            </tr>
+        )
+    }
+
+    handleAddItem(e) {
         e.preventDefault()
         this.setState({
-            toggleAddItem: !this.state.toggleAddItem
+            isAddingItem: !this.state.isAddingItem
         })
+    }
+
+    handleOnSave(e) {
+        e.preventDefault()
+        this.setState({
+            isAddingItem: !this.state.isAddingItem
+        })
+
+        //collect user input
+        const {inputName, inputTimezone, inputAvailTime} = this.refs
+
+        if (inputName.value !== "") {
+            const inputMember = {
+                name: inputName.value,
+                timezone: inputTimezone.value,
+                availTime: inputAvailTime.value
+            }
+            //update redux state
+            this.props.addMember(inputMember)
+        }
+
     }
 
     render() {
         return (
             <div className="container">
-                <table className="table table-stripe">
+                <table className="table table-striped">
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Timezones</th>
+                            <th>Timezone</th>
                             <th>Availability</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>@ejour</td>
-                            <td>+8</td>
-                            <td>2pm - 4pm</td>
-                        </tr>
-                        <tr>
-                            <td>@nionata</td>
-                            <td>-2</td>
-                            <td>2pm - 4pm</td>
-                        </tr>
-                        {this.state.toggleAddItem ? this.renderInputForm() : null}
+                        {this.props.team.members.map(this.renderMember)}
+                        {this.state.isAddingItem ? this.renderInputForm() : null}
                     </tbody>
                 </table>
-                <a href="#" onClick={this.handleAddItem}>add item</a>
-                <button type="button" className="btn btn-default pull-right">Sundial!</button>
+                {
+                    this.state.isAddingItem ? (
+                        <button type="button" className="btn btn-default pull-right" onClick={this.handleOnSave}>Save</button>
+                    ) : (
+                            <div>
+                                <a href="#" onClick={this.handleAddItem}>Add more member...</a>
+                                <button type="button" className="btn btn-default pull-right">Sundial!</button>
+                            </div>
+                        )
+                }
             </div>
         )
     }
+}
+
+InputBoard.PropTypes = {
+    team: React.PropTypes.object,
+    addMember: React.PropTypes.func
 }
 
 export default InputBoard;
