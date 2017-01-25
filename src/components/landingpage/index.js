@@ -3,7 +3,10 @@ import React, {Component} from 'react';
 import NavBar from '../ui/NavBar';
 import Body from './body/index';
 import Footer from '../ui/Footer';
+import 'normalize-css/normalize.css';
+import 'skeleton-css/css/skeleton.css';
 import $ from 'jquery';
+
 import './index.css'
 
 class LandingPage extends Component {
