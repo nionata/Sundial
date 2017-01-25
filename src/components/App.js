@@ -9,7 +9,7 @@ import '../assets/styles/App.css'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="App-container">
         <div className="App-header text-center ">
           <h2> <img src={sundialLogo} className="App-logo " alt="logo" /> Sundial</h2>
         </div>

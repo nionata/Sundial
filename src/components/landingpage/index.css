@@ -64,6 +64,7 @@ FEATURE HIGHLIGHT
 GENERATE LINK
 =========== */
 #generate-link {
+  box-sizing: content-box;
   padding-top: 20%;
   min-height: 300px;
   text-align: center; }

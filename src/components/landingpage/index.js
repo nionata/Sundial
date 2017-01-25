@@ -3,7 +3,10 @@ import React, {Component} from 'react';
 import NavBar from '../ui/NavBar';
 import Body from './body/index';
 import Footer from '../ui/Footer';
+import 'normalize-css/normalize.css';
+import 'skeleton-css/css/skeleton.css';
 import $ from 'jquery';
+
 import './index.css'
 
 class LandingPage extends Component {
@@ -11,7 +14,7 @@ class LandingPage extends Component {
     // smooth scrolling
     $(function() {
       $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
           var target = $(this.hash);
           target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
           if (target.length) {
