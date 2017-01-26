@@ -1,0 +1,25 @@
+header {
+  min-height: 500px;
+  text-align: center; }
+header .title {
+  line-height: 160px; }
+header .sub-title {
+  margin-bottom: 40px;}
+header .title {
+  font-size: 3.4em; }
+header .sub-title {
+  font-size: 2em; }
+header .title,
+header .sub-title {
+  font-weight: 300; }
+header a {
+  background-color: #9a8478;
+  border-radius: 10px;
+  color: #f7f0f5;
+  font-size: 2em;
+  padding: 15px 20px;
+  transition: all ease-in-out .2s; }
+header a:hover {
+  background-color: #decbb7;
+  color: #433633;
+  transition: all ease-in-out .2s; }

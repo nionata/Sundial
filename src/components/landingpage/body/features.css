@@ -1,0 +1,17 @@
+#features {
+  padding-bottom: 10%;
+  padding-top: 70px;
+  margin-top: -70px; }
+#features .feature-title,
+#features .feature-description {
+  margin-bottom: 20px; }
+#features .button {
+  border: 1px solid #decbb7;
+  color: #433633;
+  padding: 8px 10px;
+  transition: background-color ease-in-out .2s;}
+#features .button:hover {
+  border: 1px solid #f7f0f5;
+  background-color: #433633;
+  color: #f7f0f5;
+  transition: background-color ease-in-out .2s;}

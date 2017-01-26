@@ -1,0 +1,8 @@
+.feature-highlight {
+  margin: 50px 0; }
+.feature-highlight img {
+  width: 100%; }
+.feature-highlight:nth-child(odd) div {
+  float: right; }
+.feature-highlight:nth-child(odd) .figure-caption {
+  float: left; }
