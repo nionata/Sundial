@@ -18,3 +18,7 @@
 .main-navigation .external-nav-link a:hover  {
   color: #decbb7;
   transition: color ease-in-out .2s; }
+.main-navigation .external-nav-link a {
+  padding-right: 15px; }
+.main-navigation .external-nav-link a:last-child {
+  padding-right: 0; }

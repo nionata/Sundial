@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import sundialLogo from '../../assets/images/favicon-32x32.png';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import './navbar.css';
 
 class NavBar extends Component {
@@ -19,10 +19,8 @@ class NavBar extends Component {
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
-          <Nav pullRight>
-            <NavItem eventKey={1} href="#features">Features</NavItem>
-          </Nav>
           <Navbar.Text className='external-nav-link' pullRight>
+            <Navbar.Link href="#features">Features</Navbar.Link>
             <Navbar.Link href="//github.com/meerkats-sundial/sundial/" target="_blank">GitHub</Navbar.Link>
           </Navbar.Text>
         </Navbar.Collapse>
