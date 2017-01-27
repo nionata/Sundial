@@ -1,0 +1,18 @@
+#generate-link {
+  box-sizing: border-box;
+  padding-top: 15%;
+  height: 492px;
+  text-align: center; }
+#generate-link .section-title {
+  margin-bottom: 40px; }
+#generate-link a {
+  background-color: #9a8478;
+  border-radius: 10px;
+  color: #f7f0f5;
+  font-size: 2em;
+  padding: 15px 20px;
+  transition: all ease-in-out .2s; }
+#generate-link a:hover {
+  background-color: #DECBB7;
+  color: #433633;
+  transition: all ease-in-out .2s; }
