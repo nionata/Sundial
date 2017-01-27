@@ -21,8 +21,10 @@ class NavBar extends Component {
         <Navbar.Collapse>
           <Nav pullRight>
             <NavItem eventKey={1} href="#features">Features</NavItem>
-            <NavItem eventKey={2} href="//github.com/meerkats-sundial/sundial/">GitHub</NavItem>
           </Nav>
+          <Navbar.Text className='external-nav-link' pullRight>
+            <Navbar.Link href="//github.com/meerkats-sundial/sundial/" target="_blank">GitHub</Navbar.Link>
+          </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>
     );
