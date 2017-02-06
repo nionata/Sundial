@@ -6,17 +6,16 @@ Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Demo
-Landing page: [https://meerkats-sundial.github.io/landing-page/](https://meerkats-sundial.github.io/landing-page/) <br>
-Meeting schedule page: [https://meerkats-sundial.github.io/sundial-frontend/](https://meerkats-sundial.github.io/sundial-frontend/)
+Landing page: [https://meerkats-sundial.github.io/sundial-frontend/](https://meerkats-sundial.github.io/sundial-frontend/)
 
 ## Getting started
 Run the project for the firsttime with 2 commands:
 
 ### `npm install`
 
-### `npm start` 
+### `npm start`
 
-Then open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then open [http://localhost:3000/sundial-frontend/](http://localhost:3000/sundial-frontend/) to view it in the browser.
 
 
 ## Available Scripts
@@ -26,7 +25,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000/sundial-frontend/](http://localhost:3000/sundial-frontend/) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
