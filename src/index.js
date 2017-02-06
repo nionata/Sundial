@@ -14,8 +14,8 @@ import './index.css'
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory} >
-      <Route path="/" component={LandingPage} />
-      <Route path="/:sessionid" component={App} />
+      <Route path="/sundial-frontend/" component={LandingPage} />
+      <Route path="/sundial-frontend/:sessionid" component={App} />
     </Router>
   </Provider>,
   document.getElementById('root')
