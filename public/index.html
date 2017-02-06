@@ -26,6 +26,17 @@
 
     <meta name="description" content="team collaboration tool">
     <meta name="author" content="meerkat-sundial">
+
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
       It will be replaced with the URL of the `public` folder during the build.
