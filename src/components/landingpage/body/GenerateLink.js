@@ -7,7 +7,7 @@ class GenerateLink extends Component {
       <section id="generate-link">
         <div>
           <h2 className="section-title">Generate your link and start collaborating with your team</h2>
-          <a href="/sundial-frontend/new">Generate Link</a>
+          <a href="/team">Generate Link</a>
         </div>
       </section>
     );

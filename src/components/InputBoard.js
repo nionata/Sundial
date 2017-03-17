@@ -83,7 +83,7 @@ class InputBoard extends React.Component {
                         <button type="button" className="btn btn-default pull-right" onClick={this.handleOnSave}>Save</button>
                     ) : (
                             <div>
-                                <a href="#" onClick={this.handleAddItem}>Add more member...</a>
+                                <a href="#" onClick={this.handleAddItem}>Add a teamate...</a>
                                 <button type="button" className="btn btn-default pull-right">Sundial!</button>
                             </div>
                         )
