@@ -8,7 +8,7 @@ import store from './store'
 import LandingPage from './components/landingpage/index';
 
 //import database
-/*import * as firebase from 'firebase';
+import * as firebase from 'firebase';
 
 var config = {
     apiKey: "AIzaSyCgvDZulACFrd5vOLUTgzwNDE9BASpKtaw",
@@ -17,7 +17,7 @@ var config = {
     storageBucket: "meerkat-sundial.appspot.com",
     messagingSenderId: "9951676621"
 };
-firebase.initializeApp(config);*/
+firebase.initializeApp(config);
 
 //import styles
 import './index.css'
