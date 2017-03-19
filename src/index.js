@@ -22,13 +22,17 @@ firebase.initializeApp(config);
 //import styles
 import './index.css'
 
+const NotFound = () => (<h1>404.. This page is not found!</h1>)
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory} >
       <Route path="/" component={LandingPage} />
-      <Route path="/team" component={App} />
+      <Route path="/team/:id" component={App} />
+      <Route path='*' component={NotFound} />
     </Router>
   </Provider>,
   document.getElementById('root')
 )
+
+
