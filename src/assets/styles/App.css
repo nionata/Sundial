@@ -18,6 +18,9 @@
   color: white;
 }
 
+.Link-top {
+  color: white;
+}
 
 /******/
 /*BODY*/
@@ -27,7 +30,7 @@
   padding: 20px;
 }
 
-.App-input-board-container{
+.App-input-board-container {
   margin-bottom:20px;
 }
 

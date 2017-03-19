@@ -5,8 +5,8 @@ class ResultBoard extends React.Component {
         return (
             <div className="container text-center">
                 <div className="jumbotron">
-                <h2>Sundial Availability</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a fringilla leo. Ut viverra nunc at ante consequat pulvinar. </p>
+                    <h2>Your Team's Availability</h2>
+                    <p>Feature still in production. </p>
                 </div>
             </div>
         )

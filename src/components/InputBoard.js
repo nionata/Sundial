@@ -13,32 +13,11 @@ class InputBoard extends React.Component {
         this.handleOnSave = this.handleOnSave.bind(this)
         this.handleOnSundial = this.handleOnSundial.bind(this)
 
-        console.log(this.props.id)
-
         //local state
         this.state = {
             team: {
-                "name": "Meerkat Sundial",
-                "members": [
-                /*{
-                    "name": "@musecode",
-                    "availTimeStart": "5",
-                    "availTimeEnd": "10",
-                    "timezone": "+12"
-                },
-                {
-                    "name": "@nionata",
-                    "availTimeStart": "5",
-                    "availTimeEnd": "10",
-                    "timezone": "-5"
-                },
-                 {
-                    "name": "@ejour",
-                    "availTimeStart": "5",
-                    "availTimeEnd": "10",
-                    "timezone": "+8"
-                }*/
-                ]
+                name: "",
+                members: []
             },
             isAddingItem: false, //Booean value to enable or disable inputform
             isSundialActivated: false
@@ -70,7 +49,7 @@ class InputBoard extends React.Component {
     renderResultBoard() {
         return (
             <div className="container App-body">
-                <ResultBoard />
+                <ResultBoard/>
             </div>
         )
     }
@@ -84,28 +63,26 @@ class InputBoard extends React.Component {
 
     handleOnSave(e) {
         e.preventDefault()
-        this.setState({
-            isAddingItem: !this.state.isAddingItem
-        })
 
         //collect user input
         const {inputName, inputTimezone, inputAvailTimeStart, inputAvailTimeEnd} = this.refs
 
-        if (inputName.value !== "") {
-            const inputMember = {
+        if (inputName.value !== "" && inputTimezone.value !== "" && inputAvailTimeStart.value !== "" && inputAvailTimeEnd.value !== "") {
+            const ref = firebase.database().ref().child("teams").child(this.props.id).child("members")
+
+            ref.push({
                 name: inputName.value,
                 timezone: inputTimezone.value,
                 availTimeStart: inputAvailTimeStart.value,
                 availTimeEnd: inputAvailTimeEnd.value
-            }
-            this.state.team.members.push(inputMember)
+            })
+
+            this.setState({
+                isAddingItem: !this.state.isAddingItem
+            })
+        } else {
+            alert("Make sure to fill every field in!")
         }
-
-        var offset = new Date().getTimezoneOffset()/60;
-        console.log(offset);
-
-        //console.log(this.state.team);
-
     }
 
     handleOnSundial(e) {
@@ -116,35 +93,30 @@ class InputBoard extends React.Component {
     }
 
     componentDidMount() {
-        const ref = firebase.database().ref().child("teams").child("-23523423422")
+        const ref = firebase.database().ref().child("teams").child(this.props.id)
         ref.on('value', snap => {
-            this.setState( {
-                team: {
-                "name": "Meerkat Sundial",
-                "id": "random String",
-                "members": [
-                /*{
-                    "name": "@musecode",
-                    "availTimeStart": "5",
-                    "availTimeEnd": "10",
-                    "timezone": "+12"
-                },
-                {
-                    "name": "@nionata",
-                    "availTimeStart": "5",
-                    "availTimeEnd": "10",
-                    "timezone": "-5"
-                },
-                 {
-                    "name": "@ejour",
-                    "availTimeStart": "5",
-                    "availTimeEnd": "10",
-                    "timezone": "+8"
-                }*/
-                ]
+            if(snap.val().members !== undefined) {
+                var tempMembers = []
+
+                snap.child("members").forEach(function(childSnap) {
+                    tempMembers.push(childSnap.val())
+                })
+
+                this.setState({
+                    team: {
+                        name: snap.val().name,
+                        members: tempMembers
+                    }
+                })
+            } else {
+                this.setState({
+                    team: {
+                        name: snap.val().name,
+                        members: []
+                    }
+                })
             }
-            });
-        });
+        })
     }
 
     render() {
