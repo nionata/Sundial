@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import sundialLogo from '../assets/images/favicon-32x32.png';
-import InputBoardContainer from '../containers/InputBoardContainer';
-import ResultBoardContainer from '../containers/ResultBoardContainer';
+import InputBoard from '../components/InputBoard.js'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../assets/styles/App.css'
 
@@ -19,9 +18,8 @@ class App extends Component {
         </div>
         <div className="container App-body">
           <div className="App-input-board-container">
-            <InputBoardContainer />
+            <InputBoard id={this.props.params.id}/>
           </div>
-          <ResultBoardContainer />
         </div>
       </div>
     );
