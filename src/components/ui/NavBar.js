@@ -10,7 +10,7 @@ class NavBar extends Component {
         <Navbar.Header>
           <Navbar.Brand>
             <span>
-              <a href="/">
+              <a href="#title">
                 <img src={sundialLogo} alt="meerkat icon" />
                 Sundial
               </a>
@@ -21,7 +21,7 @@ class NavBar extends Component {
         <Navbar.Collapse>
           <Navbar.Text className='external-nav-link' pullRight>
             <Navbar.Link href="#features">Features</Navbar.Link>
-            <Navbar.Link href="//github.com/meerkats-sundial/sundial/" target="_blank">GitHub</Navbar.Link>
+            <Navbar.Link href="https://github.com/nionata/Sundial" target="_blank">GitHub</Navbar.Link>
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>
