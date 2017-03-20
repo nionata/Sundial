@@ -48,7 +48,7 @@ class InputBoard extends React.Component {
     renderResultBoard() {
         return (
             <div className="container App-body">
-                <ResultBoard/>
+                <ResultBoard members={this.state.team.members}/>
             </div>
         )
     }
@@ -73,11 +73,11 @@ class InputBoard extends React.Component {
             var endHour = inputAvailTimeEnd.value.substring ( 0,2 ); //Extract hour
             var endMinutes = inputAvailTimeEnd.value.substring ( 3,5 ); //Extract minutes
 
-            if(parseInt(startHour) > parseInt(endHour)) {
+            if(parseInt(startHour, 10) > parseInt(endHour, 10)) {
                 alert("Your start time is after your end time!")
                 return
-            } else if(parseInt(startHour) === parseInt(endHour)) {
-                if(parseInt(startMinutes) > parseInt(endMinutes)) {
+            } else if(parseInt(startHour, 10) === parseInt(endHour, 10)) {
+                if(parseInt(startMinutes, 10) > parseInt(endMinutes, 10)) {
                     alert("Your start time is after your end time!")
                     return
                 }
