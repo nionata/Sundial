@@ -18,6 +18,7 @@ class GenerateLink extends Component {
             newRef.set({
                 name: inputName.value
             }).then(function() {
+                //this.props.router.push("/Sundial/team/" + newRef.key)
                 window.location.replace("/Sundial/team/" + newRef.key)
             })
         } else {
