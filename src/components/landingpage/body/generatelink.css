@@ -2,17 +2,31 @@
   box-sizing: border-box;
   padding-top: 15%;
   height: 492px;
-  text-align: center; }
+  text-align: center;
+}
+
 #generate-link .section-title {
-  margin-bottom: 40px; }
-#generate-link a {
+  margin-bottom: 40px;
+}
+
+button {
   background-color: #9a8478;
   border-radius: 10px;
   color: #f7f0f5;
   font-size: 2em;
   padding: 15px 20px;
-  transition: all ease-in-out .2s; }
-#generate-link a:hover {
+  transition: all ease-in-out .2s;
+}
+
+button:hover {
   background-color: #DECBB7;
   color: #433633;
-  transition: all ease-in-out .2s; }
+  transition: all ease-in-out .2s;
+}
+
+.form {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
