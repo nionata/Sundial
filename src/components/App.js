@@ -11,16 +11,23 @@ class App extends Component {
         super(props)
 
         this.state = {
-            name: ""
+            name: "",
+            real: true
         }
     }
 
     componentDidMount() {
         const ref = firebase.database().ref().child("teams").child(this.props.params.id)
-        ref.child("name").on('value', snap => {
-            this.setState({
-                name: snap.val()
-            });
+        ref.on('value', snap => {
+            if(snap.val() != null) {
+                this.setState({
+                    name: snap.child("name").val()
+                })
+            } else {
+                this.setState({
+                    real: false
+                })
+            }
         });
     }
 
@@ -34,16 +41,23 @@ class App extends Component {
             </h2>
           </a>
         </div>
-        <div className="text-center">
-          <h1>Team</h1>
-          <h1>{this.state.name}</h1>
-        </div>
-        <div className="container App-body">
-          <div className="App-input-board-container">
-            <InputBoard id={this.props.params.id}/>
-          </div>
-
-        </div>
+        {
+            this.state.real ? (
+                <div>
+                    <div className="text-center">
+                        <h1>Team</h1>
+                        <h1>{this.state.name}</h1>
+                    </div>
+                    <div className="container App-body">
+                        <div className="App-input-board-container">
+                            <InputBoard id={this.props.params.id}/>
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <h1 className="text-center">404.. Team not found!</h1>
+            )
+        }
       </div>
     );
   }
