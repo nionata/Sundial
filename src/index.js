@@ -4,6 +4,7 @@ import { Router, Route, browserHistory } from 'react-router'
 
 import App from './components/App'
 import LandingPage from './components/landingpage/index';
+import NotFound from './components/NotFound'
 
 //import database
 import * as firebase from 'firebase';
@@ -20,17 +21,13 @@ firebase.initializeApp(config);
 //import styles
 import './index.css'
 
-const NotFound = () => (<h1>404.. This page is not found!</h1>)
-
 ReactDOM.render(
-  //<Provider store={store}>
     <Router history={browserHistory} >
-      <Route path="/" component={LandingPage} />
-      <Route path="/team/:id" component={App} />
-      <Route path='*' component={NotFound} />
+        <Route path="/" component={LandingPage} />
+        <Route path="/team/:id" component={App} />
+        <Route path='*' component={NotFound} />
     </Router>,
-  //</Provider>,
-  document.getElementById('root')
+    document.getElementById('root')
 )
 
 
