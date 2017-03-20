@@ -18,7 +18,7 @@ class GenerateLink extends Component {
             newRef.set({
                 name: inputName.value
             }).then(function() {
-                window.location.replace("../team/" + newRef.key)
+                window.location.replace("/Sundial/team/" + newRef.key)
             })
         } else {
             alert("You didn't enter a team name!");

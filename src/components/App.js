@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="App-container">
         <div className="App-header text-center ">
-          <a href="/" className="Link-top">
+          <a href="/Sundial/" className="Link-top">
             <h2>
               <img src={sundialLogo} className="App-logo " alt="logo" /> Sundial
             </h2>
