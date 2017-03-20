@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Router, Route, browserHistory } from 'react-router'
 
 import App from './components/App'
-import LandingPage from './components/landingpage/index';
+import LandingPage from './components/landingpage/LandingPage.js';
 import NotFound from './components/NotFound'
 
 //import database
