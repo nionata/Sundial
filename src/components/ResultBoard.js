@@ -112,9 +112,9 @@ class ResultBoard extends React.Component {
                     {
                         !this.state.isLoading ? (
                             this.state.isAvail ? (
-                                <p>Your team is availible between {this.state.teamStart} and {this.state.teamEnd} your time!</p>
+                                <p>Your team is available between {this.state.teamStart} and {this.state.teamEnd} your time!</p>
                             ) : (
-                                <p>There is no availibility between the team.</p>
+                                <p>There is no availability between the team.</p>
                             )
                         ) : (
                             <p>Loading. </p>
