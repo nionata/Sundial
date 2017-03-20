@@ -2,7 +2,7 @@
   "name": "sundial-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nionata.github.io/Sundial",
+  "homepage": "https://nicholasionata.com/Sundial/",
   "devDependencies": {
     "gh-pages": "^0.12.0",
     "react-scripts": "0.8.5",
