@@ -15,6 +15,7 @@ class InputBoard extends React.Component {
         this.handleOnCancel = this.handleOnCancel.bind(this)
         this.milToStandard = this.milToStandard.bind(this)
         this.deleteMember = this.deleteMember.bind(this)
+        this.editMember = this.editMember.bind(this)
 
         //local state
         this.state = {
@@ -43,7 +44,7 @@ class InputBoard extends React.Component {
                 <td>{item.name}</td>
                 <td>{this.milToStandard(item.availTimeStart)}</td>
                 <td>{this.milToStandard(item.availTimeEnd)}</td>
-                <td><a href="" onClick={this.handleAddItem}><span className="glyphicon glyphicon-pencil small"></span></a> <a href=""><span className="glyphicon glyphicon-remove small" onClick={this.deleteMember} data-id={item.id}></span></a></td>
+                <td><a href=""><span className="glyphicon glyphicon-pencil small" onClick={this.editMember} data-mem={item}></span></a> <a href=""><span className="glyphicon glyphicon-remove small" onClick={this.deleteMember} data-id={item.id}></span></a></td>
             </tr>
         )
     }
@@ -143,8 +144,14 @@ class InputBoard extends React.Component {
         e.preventDefault()
         if(confirm("Are you sure you want to delete this teamate?")) {
             let id = e.target.dataset.id
-            const ref = firebase.database().ref().child("teams").child(this.props.id).child("members").child(id).remove()
+            firebase.database().ref().child("teams").child(this.props.id).child("members").child(id).remove()
         }
+    }
+
+    editMember(e) {
+        e.preventDefault()
+        var member = e.target.dataset.mem
+        //console.log(member.name)
     }
 
     componentDidMount() {
