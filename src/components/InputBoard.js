@@ -12,7 +12,9 @@ class InputBoard extends React.Component {
         this.handleAddItem = this.handleAddItem.bind(this)
         this.handleOnSave = this.handleOnSave.bind(this)
         this.handleOnSundial = this.handleOnSundial.bind(this)
+        this.handleOnCancel = this.handleOnCancel.bind(this)
         this.milToStandard = this.milToStandard.bind(this)
+        this.deleteMember = this.deleteMember.bind(this)
 
         //local state
         this.state = {
@@ -28,9 +30,9 @@ class InputBoard extends React.Component {
     renderInputForm() {
         return (
             <tr>
-                <td><input type="text" ref="inputName" className="form-control" placeholder="Full Name (ex. John Doe)"/></td>
-                <td><input type="time" ref="inputAvailTimeStart" className="form-control" placeholder="Start Time (ex. 1)"/></td>
-                <td><input type="time" ref="inputAvailTimeEnd" className="form-control" placeholder="End Time (ex. 5)"/></td>
+                <td><input type="text" ref="inputName" className="form-control" placeholder="Name (ex. John Doe)"/></td>
+                <td><input type="time" ref="inputAvailTimeStart" className="form-control"/></td>
+                <td><input type="time" ref="inputAvailTimeEnd" className="form-control"/></td>
             </tr>
         )
     }
@@ -41,6 +43,7 @@ class InputBoard extends React.Component {
                 <td>{item.name}</td>
                 <td>{this.milToStandard(item.availTimeStart)}</td>
                 <td>{this.milToStandard(item.availTimeEnd)}</td>
+                <td><a href="" onClick={this.handleAddItem}><span className="glyphicon glyphicon-pencil small"></span></a> <a href=""><span className="glyphicon glyphicon-remove small" onClick={this.deleteMember} data-id={item.id}></span></a></td>
             </tr>
         )
     }
@@ -56,7 +59,8 @@ class InputBoard extends React.Component {
     handleAddItem(e) {
         e.preventDefault()
         this.setState({
-            isAddingItem: !this.state.isAddingItem
+            isAddingItem: !this.state.isAddingItem,
+            isSundialActivated: false
         })
     }
 
@@ -107,6 +111,13 @@ class InputBoard extends React.Component {
         })
     }
 
+    handleOnCancel(e) {
+        e.preventDefault()
+        this.setState({
+            isAddingItem: false
+        })
+    }
+
     milToStandard(value) {
         var hour = value.substring ( 0,2 ); //Extract hour
         var minutes = value.substring ( 3,5 ); //Extract minutes
@@ -128,6 +139,14 @@ class InputBoard extends React.Component {
         return hour + ':' + minutes + ' ' + identifier; //Return the constructed standard time
     }
 
+    deleteMember(e) {
+        e.preventDefault()
+        if(confirm("Are you sure you want to delete this teamate?")) {
+            let id = e.target.dataset.id
+            const ref = firebase.database().ref().child("teams").child(this.props.id).child("members").child(id).remove()
+        }
+    }
+
     componentDidMount() {
         const ref = firebase.database().ref().child("teams").child(this.props.id)
         ref.on('value', snap => {
@@ -136,7 +155,9 @@ class InputBoard extends React.Component {
                     var tempMembers = []
 
                     snap.child("members").forEach(function(childSnap) {
-                        tempMembers.push(childSnap.val())
+                        var newMem = childSnap.val()
+                        newMem.id = childSnap.key
+                        tempMembers.push(newMem)
                     })
 
                     this.setState({
@@ -166,6 +187,7 @@ class InputBoard extends React.Component {
                             <th>Name</th>
                             <th>Availability Start</th>
                             <th>Availability End</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -175,7 +197,10 @@ class InputBoard extends React.Component {
                 </table>
                 {
                     this.state.isAddingItem ? (
+                        <div>
                         <button type="button" className="btn btn-default pull-right" onClick={this.handleOnSave}>Save</button>
+                        <button type="button" className="btn btn-default pull-left" onClick={this.handleOnCancel}>Cancel</button>
+                        </div>
                     ) : (
                             <div>
                                 <a href="#" onClick={this.handleAddItem}>Add a teamate...</a>
