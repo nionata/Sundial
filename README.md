@@ -1,4 +1,4 @@
-# Meerkats-sundial/sundial-frontend
+# Sundial
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
@@ -6,7 +6,7 @@ Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Demo
-Landing page: [https://meerkats-sundial.github.io/sundial-frontend/](https://meerkats-sundial.github.io/sundial-frontend/)
+Landing page: [https://nicholasionata.com/sundial/](https://nicholasionata.com/sundial/)
 
 ## Getting started
 Run the project for the firsttime with 2 commands:
@@ -15,7 +15,7 @@ Run the project for the firsttime with 2 commands:
 
 ### `npm start`
 
-Then open [http://localhost:3000/sundial-frontend/](http://localhost:3000/sundial-frontend/) to view it in the browser.
+Then open [http://localhost:3000/sundial/](http://localhost:3000/sundial/) to view it in the browser.
 
 
 ## Available Scripts
