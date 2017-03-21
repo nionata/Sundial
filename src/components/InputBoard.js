@@ -13,9 +13,9 @@ class InputBoard extends React.Component {
         this.handleOnSave = this.handleOnSave.bind(this)
         this.handleOnSundial = this.handleOnSundial.bind(this)
         this.handleOnCancel = this.handleOnCancel.bind(this)
+        this.handleOnEdit = this.handleOnEdit.bind(this)
         this.milToStandard = this.milToStandard.bind(this)
         this.deleteMember = this.deleteMember.bind(this)
-        this.editMember = this.editMember.bind(this)
 
         //local state
         this.state = {
@@ -24,29 +24,45 @@ class InputBoard extends React.Component {
                 members: []
             },
             isAddingItem: false, //Booean value to enable or disable inputform
-            isSundialActivated: false
+            isSundialActivated: false,
+            editing: null
         }
     }
 
     renderInputForm() {
-        return (
+        if(this.state.editing == null) {
+            return (
             <tr>
                 <td><input type="text" ref="inputName" className="form-control" placeholder="Name (ex. John Doe)"/></td>
                 <td><input type="time" ref="inputAvailTimeStart" className="form-control"/></td>
                 <td><input type="time" ref="inputAvailTimeEnd" className="form-control"/></td>
             </tr>
         )
+        }
     }
 
     renderMember(item, index) {
-        return (
-            <tr key={index}>
-                <td>{item.name}</td>
-                <td>{this.milToStandard(item.availTimeStart)}</td>
-                <td>{this.milToStandard(item.availTimeEnd)}</td>
-                <td><a href=""><span className="glyphicon glyphicon-pencil small" onClick={this.editMember} data-mem={item}></span></a> <a href=""><span className="glyphicon glyphicon-remove small" onClick={this.deleteMember} data-id={item.id}></span></a></td>
-            </tr>
-        )
+        if(item.id === this.state.editing) {
+            return (
+                <tr>
+                    <td><input type="text" ref="inputName" className="form-control" placeholder="Name (ex. John Doe)" defaultValue={item.name}/></td>
+                    <td><input type="time" ref="inputAvailTimeStart" className="form-control" defaultValue={item.availTimeStart}/></td>
+                    <td><input type="time" ref="inputAvailTimeEnd" className="form-control" defaultValue={item.availTimeEnd}/></td>
+                </tr>
+            )
+        } else {
+            return (
+                <tr key={index}>
+                    <td>{item.name}</td>
+                    <td>{this.milToStandard(item.availTimeStart)}</td>
+                    <td>{this.milToStandard(item.availTimeEnd)}</td>
+                    <td>
+                        <a href=""><span className="glyphicon glyphicon-pencil small" onClick={this.handleOnEdit} data-id={item.id}></span></a>
+                        <a href=""> <span className="glyphicon glyphicon-remove small" onClick={this.deleteMember} data-id={item.id}></span></a>
+                    </td>
+                </tr>
+            )
+        }
     }
 
     renderResultBoard() {
@@ -90,15 +106,25 @@ class InputBoard extends React.Component {
 
             const ref = firebase.database().ref().child("teams").child(this.props.id).child("members")
 
-            ref.push({
-                name: inputName.value,
-                timeZone: new Date().getTimezoneOffset() / -60,
-                availTimeStart: inputAvailTimeStart.value,
-                availTimeEnd: inputAvailTimeEnd.value
-            })
+            if(this.state.editing == null) {
+                ref.push({
+                    name: inputName.value,
+                    timeZone: new Date().getTimezoneOffset() / -60,
+                    availTimeStart: inputAvailTimeStart.value,
+                    availTimeEnd: inputAvailTimeEnd.value
+                })
+            } else {
+                ref.child(this.state.editing).set({
+                    name: inputName.value,
+                    timeZone: new Date().getTimezoneOffset() / -60,
+                    availTimeStart: inputAvailTimeStart.value,
+                    availTimeEnd: inputAvailTimeEnd.value
+                })
+            }
 
             this.setState({
-                isAddingItem: !this.state.isAddingItem
+                    isAddingItem: false,
+                    editing: null
             })
         } else {
             alert("Make sure to fill every field in!")
@@ -114,8 +140,18 @@ class InputBoard extends React.Component {
 
     handleOnCancel(e) {
         e.preventDefault()
+
         this.setState({
-            isAddingItem: false
+            isAddingItem: false,
+            editing: null
+        })
+    }
+
+    handleOnEdit(e) {
+        e.preventDefault()
+        this.setState({
+            isAddingItem: true,
+            editing: e.target.dataset.id
         })
     }
 
@@ -146,12 +182,6 @@ class InputBoard extends React.Component {
             let id = e.target.dataset.id
             firebase.database().ref().child("teams").child(this.props.id).child("members").child(id).remove()
         }
-    }
-
-    editMember(e) {
-        e.preventDefault()
-        var member = e.target.dataset.mem
-        //console.log(member.name)
     }
 
     componentDidMount() {
@@ -205,14 +235,14 @@ class InputBoard extends React.Component {
                 {
                     this.state.isAddingItem ? (
                         <div>
-                        <button type="button" className="btn btn-default pull-right" onClick={this.handleOnSave}>Save</button>
-                        <button type="button" className="btn btn-default pull-left" onClick={this.handleOnCancel}>Cancel</button>
+                            <button type="button" className="btn btn-default pull-right" onClick={this.handleOnSave}>Save</button>
+                            <button type="button" className="btn btn-default pull-left" onClick={this.handleOnCancel}>Cancel</button>
                         </div>
                     ) : (
-                            <div>
-                                <a href="#" onClick={this.handleAddItem}>Add a teamate...</a>
-                                <button type="button" className="btn btn-default pull-right" onClick={this.handleOnSundial}>Sundial!</button>
-                            </div>
+                        <div>
+                            <a href="#" onClick={this.handleAddItem}>Add a teamate...</a>
+                            <button type="button" className="btn btn-default pull-right" onClick={this.handleOnSundial}>Sundial!</button>
+                        </div>
                     )
                 }
                 {this.state.isSundialActivated ? this.renderResultBoard() : null}
