@@ -32,12 +32,14 @@ class InputBoard extends React.Component {
     renderInputForm() {
         if(this.state.editing == null) {
             return (
-            <tr>
-                <td><input type="text" ref="inputName" className="form-control" placeholder="Name (ex. John Doe)"/></td>
-                <td><input type="time" ref="inputAvailTimeStart" className="form-control"/></td>
-                <td><input type="time" ref="inputAvailTimeEnd" className="form-control"/></td>
-            </tr>
-        )
+                <tr>
+                    <td><input type="text" ref="inputName" className="form-control" placeholder="Name (ex. John Doe)"/></td>
+                    <td><input type="time" ref="inputAvailTimeStart" className="form-control"/></td>
+                    <td><input type="time" ref="inputAvailTimeEnd" className="form-control"/></td>
+                </tr>
+            )
+        } else {
+            return null
         }
     }
 
