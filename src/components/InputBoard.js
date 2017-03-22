@@ -46,7 +46,7 @@ class InputBoard extends React.Component {
     renderMember(item, index) {
         if(item.id === this.state.editing) {
             return (
-                <tr>
+                <tr key={index}>
                     <td><input type="text" ref="inputName" className="form-control" placeholder="Name (ex. John Doe)" defaultValue={item.name}/></td>
                     <td><input type="time" ref="inputAvailTimeStart" className="form-control" defaultValue={item.availTimeStart}/></td>
                     <td><input type="time" ref="inputAvailTimeEnd" className="form-control" defaultValue={item.availTimeEnd}/></td>
@@ -58,10 +58,16 @@ class InputBoard extends React.Component {
                     <td>{item.name}</td>
                     <td>{this.milToStandard(item.availTimeStart)}</td>
                     <td>{this.milToStandard(item.availTimeEnd)}</td>
-                    <td>
-                        <a href=""><span className="glyphicon glyphicon-pencil small" onClick={this.handleOnEdit} data-id={item.id}></span></a>
-                        <a href=""> <span className="glyphicon glyphicon-remove small" onClick={this.deleteMember} data-id={item.id}></span></a>
-                    </td>
+                    {
+                        !this.state.isAddingItem && this.state.editing === null ? (
+                            <td>
+                                <a href=""><span className="glyphicon glyphicon-pencil small" onClick={this.handleOnEdit} data-id={item.id}></span></a>
+                                <a href=""> <span className="glyphicon glyphicon-remove small" onClick={this.deleteMember} data-id={item.id}></span></a>
+                            </td>
+                        ) : (
+                            null
+                        )
+                    }
                 </tr>
             )
         }
@@ -153,7 +159,8 @@ class InputBoard extends React.Component {
         e.preventDefault()
         this.setState({
             isAddingItem: true,
-            editing: e.target.dataset.id
+            editing: e.target.dataset.id,
+            isSundialActivated: false
         })
     }
 
@@ -226,7 +233,13 @@ class InputBoard extends React.Component {
                             <th>Name</th>
                             <th>Availability Start</th>
                             <th>Availability End</th>
-                            <th>Edit</th>
+                            {
+                                !this.state.isAddingItem && this.state.editing === null ? (
+                                    <th>Edit</th>
+                                ) : (
+                                    null
+                                )
+                            }
                         </tr>
                     </thead>
                     <tbody>
