@@ -9,11 +9,36 @@ class App extends Component {
 
     constructor(props) {
         super(props)
+        this.handleOnName = this.handleOnName.bind(this)
+        this.onSaveName = this.onSaveName.bind(this)
 
         this.state = {
             name: "",
-            real: true
+            real: true,
+            isEditingName: false
         }
+    }
+
+    handleOnName(e) {
+        e.preventDefault()
+        this.setState({
+            isEditingName: !this.state.isEditingName
+        })
+    }
+
+    onSaveName(e) {
+         e.preventDefault()
+
+         const newName = this.refs.inputName
+
+         if(newName.value !== "") {
+            firebase.database().ref().child("teams").child(this.props.params.id).child("name").set(newName.value)
+            this.setState({
+                isEditingName: false
+            })
+         } else {
+             alert("Make sure to add a name!")
+         }
     }
 
     componentDidMount() {
@@ -45,8 +70,17 @@ class App extends Component {
             this.state.real ? (
                 <div>
                     <div className="text-center">
-                        <h1>Team</h1>
-                        <h1>{this.state.name}</h1>
+                        <h1 className="Team-heading">Team</h1>
+                        {
+                            this.state.isEditingName ? (
+                                <div>
+                                    <input type="text" ref="inputName" className="" defaultValue={this.state.name}/>
+                                    <button type="button" className="btn btn-default" onClick={this.onSaveName}>Save</button>
+                                </div>
+                            ) : (
+                                <h1 onClick={this.handleOnName}>{this.state.name}</h1>
+                            )
+                        }
                     </div>
                     <div className="container App-body">
                         <div className="App-input-board-container">
