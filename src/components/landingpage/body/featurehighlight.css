@@ -6,3 +6,6 @@
   float: right; }
 .feature-highlight:nth-child(odd) .figure-caption {
   float: left; }
+#video {
+    z-index: 10
+}
