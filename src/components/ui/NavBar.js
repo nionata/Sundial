@@ -21,7 +21,8 @@ class NavBar extends Component {
         <Navbar.Collapse>
           <Navbar.Text className='external-nav-link' pullRight>
             <Navbar.Link href="#features">Features</Navbar.Link>
-            <Navbar.Link href="https://github.com/nionata/Sundial" target="_blank">GitHub</Navbar.Link>
+            <Navbar.Link href="#how-to">How To</Navbar.Link>
+            <Navbar.Link href="#generate-link">Create Team</Navbar.Link>
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>
