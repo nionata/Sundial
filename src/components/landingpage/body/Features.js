@@ -7,26 +7,26 @@ class Features extends Component {
     return (
       <Grid fluid>
         <Row id="features">
-          <Col xs={12} sm={4} className="feature-box">
-            <h3 className="feature-title">Setup meetings</h3>
+          <Col xs={12} sm={4} className="feature-box text-center">
+            <h3 className="feature-title">Easy Setup</h3>
             <p className="feature-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a fringilla leo. Ut viverra nunc at ante consequat pulvinar.
+              Just enter a name and click a button to get started. From there just share the generated url with your teamates!
             </p>
-            <a className="button" href="//github.com/meerkats-sundial/sundial#readme">Learn more</a>
+            <a className="button" href="//github.com/nionata/sundial" target="_blank">Learn more</a>
           </Col>
-          <Col xs={12} sm={4} className="feature-box">
-            <h3 className="feature-title">Easy to use</h3>
+          <Col xs={12} sm={4} className="feature-box text-center">
+            <h3 className="feature-title">No Complex Conversions</h3>
             <p className="feature-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a fringilla leo. Ut viverra nunc at ante consequat pulvinar.
+              You simply enter your availability in your time and let Sundial take care of finding your teams availability in your time!
             </p>
-            <a className="button" href="//github.com/meerkats-sundial/sundial#readme">Learn more</a>
+            <a className="button" href="//github.com/nionata/sundial" target="_blank">Learn more</a>
           </Col>
-          <Col xs={12} sm={4} className="feature-box">
-            <h3 className="feature-title">Seemless collaboration</h3>
+          <Col xs={12} sm={4} className="feature-box text-center">
+            <h3 className="feature-title">Seemless Collaboration</h3>
             <p className="feature-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a fringilla leo. Ut viverra nunc at ante consequat pulvinar.
+              As you make changes on one client, it automatically updates all the other open clients in real time!
             </p>
-            <a className="button" href="//github.com/meerkats-sundial/sundial#readme">Learn more</a>
+            <a className="button" href="//github.com/nionata/sundial" target="_blank">Learn more</a>
           </Col>
         </Row>
       </Grid>
