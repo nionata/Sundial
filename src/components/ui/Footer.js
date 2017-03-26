@@ -8,9 +8,8 @@ class Footer extends Component {
       <Navbar className="footer" inverse>
         <Nav pullRight>
           <NavItem eventKey={3} href="https://github.com/nionata/Sundial" target="_blank">GitHub</NavItem>
-          <NavItem eventKey={4} href="/terms">Terms of Use</NavItem>
-          <NavItem eventKey={5} href="/privacy">Privacy Policy</NavItem>
-          <NavItem eventKey={6} href="/contact">Contact Us</NavItem>
+          <NavItem eventKey={3} href="https://github.com/nionata/Sundial/blob/master/README.md" target="_blank">Docs</NavItem>
+          <NavItem eventKey={3} href="https://github.com/nionata/Sundial/issues" target="_blank">Issues</NavItem>
         </Nav>
       </Navbar>
     );
