@@ -7,7 +7,7 @@ Simple session based web app that allows remote teams to find meeting availbilit
    1. [Getting Started](https://github.com/nionata/Sundial#getting-started)
    1. [Collaborating With Your Team](https://github.com/nionata/Sundial#collaborating-with-your-team)
    1. [Finding Availability](https://github.com/nionata/Sundial#finding-availability)
-   1. [Editing Fields](https://github.com/nionata/Sundial#editing-fields)
+   1. [Editing](https://github.com/nionata/Sundial#editing)
 1. [Contributing](https://github.com/nionata/Sundial#contributing)
    1. [Guidelines](https://github.com/nionata/Sundial#guidelines)
    1. [Installation](https://github.com/nionata/Sundial#installation)
@@ -21,7 +21,7 @@ Simple session based web app that allows remote teams to find meeting availbilit
 1. Enter a team name and click 'Create Team' 
 1. Click 'Add a teamate...'
 1. Enter your name, the time you will be begin to be available, and the latest you will be available
-1. Click Save
+1. Click 'Save'
 
 ### Collaborating With Your Team
 1. Copy the url
@@ -32,6 +32,26 @@ Simple session based web app that allows remote teams to find meeting availbilit
 1. Click 'Sundial'
    * The time showing is when your team is available in your local time
    * If there isn't a time showing your team will have to expand their available times
+   
+### Editing 
+
+#### Team name
+1. Click on your current team name
+1. Enter the new team name
+1. Click 'Save'
+
+#### Teamate fields
+* Name
+   1. Click the pencil to the right of the teamate you want to edit
+   1. Enter the new name
+   1. Click 'Save'
+* Times
+   1. Click the pencil to the right of the teamate you want to edit
+   1. Enter the new times
+   1. Click 'Save'
+* Delete
+   1. Click the 'x' to the right of the teamate you want to delete
+   1. Click 'Ok' to confirm you want to delete that teamate
 
 ## Contributing
 If you would like to help out, either a bug fix or adding a feature:
