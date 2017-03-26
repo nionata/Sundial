@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.cd2cc930.css",
-  "main.css.map": "static/css/main.cd2cc930.css.map",
-  "main.js": "static/js/main.cbd59b2f.js",
-  "main.js.map": "static/js/main.cbd59b2f.js.map",
+  "main.css": "static/css/main.4557e6da.css",
+  "main.css.map": "static/css/main.4557e6da.css.map",
+  "main.js": "static/js/main.e650c12b.js",
+  "main.js.map": "static/js/main.e650c12b.js.map",
   "static/media/glyphicons-halflings-regular.eot": "static/media/glyphicons-halflings-regular.f4769f9b.eot",
   "static/media/glyphicons-halflings-regular.svg": "static/media/glyphicons-halflings-regular.89889688.svg",
   "static/media/glyphicons-halflings-regular.ttf": "static/media/glyphicons-halflings-regular.e18bbf61.ttf",
@@ -22,5 +22,7 @@
   "static/media/raleway-v11-latin-regular.svg": "static/media/raleway-v11-latin-regular.f6c57152.svg",
   "static/media/raleway-v11-latin-regular.ttf": "static/media/raleway-v11-latin-regular.580d0778.ttf",
   "static/media/raleway-v11-latin-regular.woff": "static/media/raleway-v11-latin-regular.290ee38e.woff",
-  "static/media/raleway-v11-latin-regular.woff2": "static/media/raleway-v11-latin-regular.9106435a.woff2"
+  "static/media/raleway-v11-latin-regular.woff2": "static/media/raleway-v11-latin-regular.9106435a.woff2",
+  "static/media/tutOne.mp4": "static/media/tutOne.c2f6e784.mp4",
+  "static/media/tutTwo.mp4": "static/media/tutTwo.dbe0e19b.mp4"
 }
