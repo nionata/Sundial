@@ -21,7 +21,7 @@ class NavBar extends Component {
         <Navbar.Collapse>
           <Navbar.Text className='external-nav-link' pullRight>
             <Navbar.Link href="#features">Features</Navbar.Link>
-            <Navbar.Link href="#how-to">How To</Navbar.Link>
+            <Navbar.Link href="#how-to">How It Works</Navbar.Link>
             <Navbar.Link href="#generate-link">Create Team</Navbar.Link>
           </Navbar.Text>
         </Navbar.Collapse>
