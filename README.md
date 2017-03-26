@@ -19,13 +19,13 @@ Simple session based web app that allows remote teams to find meeting availbilit
 ### Getting Started
 1. Go to http://nicholasionata.com/Sundial/#generate-link
 1. Enter a team name and click 'Create Team' 
-1. Click 'Add a teamate...'
+1. Click 'Add a teammate...'
 1. Enter your name, the time you will be begin to be available, and the latest you will be available
 1. Click 'Save'
 
 ### Collaborating With Your Team
 1. Copy the url
-1. Send it to your teamates
+1. Send it to your teammates
 1. Have your team open up the link and complete steps 3-5 of [Getting Started](https://github.com/nionata/Sundial#getting-started)
 
 ### Finding Availability
@@ -40,18 +40,18 @@ Simple session based web app that allows remote teams to find meeting availbilit
 1. Enter the new team name
 1. Click 'Save'
 
-#### Teamate fields
+#### Teammate fields
 * Name
-   1. Click the pencil to the right of the teamate you want to edit
+   1. Click the pencil to the right of the teammate you want to edit
    1. Enter the new name
    1. Click 'Save'
 * Times
-   1. Click the pencil to the right of the teamate you want to edit
+   1. Click the pencil to the right of the teammate you want to edit
    1. Enter the new times
    1. Click 'Save'
 * Delete
-   1. Click the 'x' to the right of the teamate you want to delete
-   1. Click 'Ok' to confirm you want to delete that teamate
+   1. Click the 'x' to the right of the teammate you want to delete
+   1. Click 'Ok' to confirm you want to delete that teammate
 
 ## Contributing
 If you would like to help out, either a bug fix or adding a feature:

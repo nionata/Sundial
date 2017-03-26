@@ -187,7 +187,7 @@ class InputBoard extends React.Component {
 
     deleteMember(e) {
         e.preventDefault()
-        if(confirm("Are you sure you want to delete this teamate?")) {
+        if(confirm("Are you sure you want to delete this teammate?")) {
             let id = e.target.dataset.id
             firebase.database().ref().child("teams").child(this.props.id).child("members").child(id).remove()
         }
@@ -255,7 +255,7 @@ class InputBoard extends React.Component {
                         </div>
                     ) : (
                         <div>
-                            <a href="#" onClick={this.handleAddItem}>Add a teamate...</a>
+                            <a href="#" onClick={this.handleAddItem}>Add a teammate...</a>
                             <button type="button" className="btn btn-default pull-right" onClick={this.handleOnSundial}>Sundial!</button>
                         </div>
                     )
