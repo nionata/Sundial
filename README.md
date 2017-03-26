@@ -2,17 +2,17 @@
 Simple session based web app that allows remote teams to find meeting availbility across multiple time zones! 
 
 ## Table of Contents
-1. [Table of Contents](https://github.com/nionata/Sundial#Table-of-Contents)
-1. [Usage](https://github.com/nionata/Sundial#Usage)
-   1. [Getting Started](https://github.com/nionata/Sundial#Getting-Started)
-   1. [Collaborating With Your Team](https://github.com/nionata/Sundial#Collaborating-With-Your-Team)
-   1. [Finding Availability](https://github.com/nionata/Sundial#Finding-Availability)
-   1. [Editing Fields](https://github.com/nionata/Sundial#Editing-Fields)
-1. [Contributing](https://github.com/nionata/Sundial#Contributing)
-   1. [Guidelines](https://github.com/nionata/Sundial#Guidelines)
-   1. [Installation](https://github.com/nionata/Sundial#Installation)
-1. [Credits](https://github.com/nionata/Sundial#Credits)
-1. [License](https://github.com/nionata/Sundial#License)
+1. [Table of Contents](https://github.com/nionata/Sundial#table-of-contents)
+1. [Usage](https://github.com/nionata/Sundial#usage)
+   1. [Getting Started](https://github.com/nionata/Sundial#getting-started)
+   1. [Collaborating With Your Team](https://github.com/nionata/Sundial#collaborating-with-your-team)
+   1. [Finding Availability](https://github.com/nionata/Sundial#finding-availability)
+   1. [Editing Fields](https://github.com/nionata/Sundial#editing-fields)
+1. [Contributing](https://github.com/nionata/Sundial#contributing)
+   1. [Guidelines](https://github.com/nionata/Sundial#guidelines)
+   1. [Installation](https://github.com/nionata/Sundial#installation)
+1. [Credits](https://github.com/nionata/Sundial#credits)
+1. [License](https://github.com/nionata/Sundial#license)
 
 ## Usage
 
@@ -26,7 +26,7 @@ Simple session based web app that allows remote teams to find meeting availbilit
 ### Collaborating With Your Team
 1. Copy the url
 1. Send it to your teamates
-1. Have your team open up the link and complete steps 3-5 of [Getting Started](https://github.com/nionata/Sundial#Getting-Started)
+1. Have your team open up the link and complete steps 3-5 of [Getting Started](https://github.com/nionata/Sundial#getting-started)
 
 ### Finding Availability
 1. Click 'Sundial'
@@ -35,11 +35,11 @@ Simple session based web app that allows remote teams to find meeting availbilit
 
 ## Contributing
 If you would like to help out, either a bug fix or adding a feature:
-    1. Fork the repo
-    1. Add your changes
-    1. Submit a pull request comparing the main branch on https://github.com/nionata/Sundial to your forked repo branch
-    1. Add a detailed summary of your changes
-    1. If it will help the project, I will approve the pull request
+1. Fork the repo
+1. Add your changes    
+1. Submit a pull request comparing the main branch on https://github.com/nionata/Sundial to your forked repo branch
+1. Add a detailed summary of your changes
+1. If it will help the project, I will approve the pull request
     
 ### Guidelines
 For now just follow the current coding styles and make sure to document your changes through comments.
