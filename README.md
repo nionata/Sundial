@@ -1,56 +1,63 @@
 # Sundial
+Simple session based web app that allows remote teams to find meeting availbility across multiple time zones! 
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+## Table of Contents
+1. [Table of Contents](https://github.com/nionata/Sundial#Table-of-Contents)
+1. [Usage](https://github.com/nionata/Sundial#Usage)
+   1. [Getting Started](https://github.com/nionata/Sundial#Getting-Started)
+   1. [Collaborating With Your Team](https://github.com/nionata/Sundial#Collaborating-With-Your-Team)
+   1. [Finding Availability](https://github.com/nionata/Sundial#Finding-Availability)
+   1. [Editing Fields](https://github.com/nionata/Sundial#Editing-Fields)
+1. [Contributing](https://github.com/nionata/Sundial#Contributing)
+   1. [Guidelines](https://github.com/nionata/Sundial#Guidelines)
+   1. [Installation](https://github.com/nionata/Sundial#Installation)
+1. [Credits](https://github.com/nionata/Sundial#Credits)
+1. [License](https://github.com/nionata/Sundial#License)
 
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+## Usage
 
-## Demo
-Landing page: [http://nicholasionata.com/Sundial/](http://nicholasionata.com/Sundial/)
+### Getting Started
+1. Go to http://nicholasionata.com/Sundial/#generate-link
+1. Enter a team name and click 'Create Team' 
+1. Click 'Add a teamate...'
+1. Enter your name, the time you will be begin to be available, and the latest you will be available
+1. Click Save
 
-## Getting started
-Run the project for the firsttime with 2 commands:
+### Collaborating With Your Team
+1. Copy the url
+1. Send it to your teamates
+1. Have your team open up the link and complete steps 3-5 of [Getting Started](https://github.com/nionata/Sundial#Getting-Started)
 
-### `npm install`
+### Finding Availability
+1. Click 'Sundial'
+   * The time showing is when your team is available in your local time
+   * If there isn't a time showing your team will have to expand their available times
 
-### `npm start`
+## Contributing
+If you would like to help out, either a bug fix or adding a feature:
+    1. Fork the repo
+    1. Add your changes
+    1. Submit a pull request comparing the main branch on https://github.com/nionata/Sundial to your forked repo branch
+    1. Add a detailed summary of your changes
+    1. If it will help the project, I will approve the pull request
+    
+### Guidelines
+For now just follow the current coding styles and make sure to document your changes through comments.
+
+### Installation
+
+#### Fork the repo and download it locally
+
+#### `npm install`
+
+#### `npm start`
 
 Then open [http://localhost:3000/Sundial/](http://localhost:3000/Sundial/) to view it in the browser.
 
+## Credits
+Thank you to [@tropicalchancer](https://github.com/tropicalchancer) for all his advice along the way and for his immense work on the [Chingu Cohorts](https://tropicalchancer.github.io/projectus/) where the project started.
 
-## Available Scripts
+Thank you to [@hoatran1403](https://github.com/hoatran1403) and Ejuor Ladev for getting the project started with me in the Chingu Cohorts. Unfortunetly, they couldn't continue working on the project.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000/sundial-frontend/](http://localhost:3000/sundial-frontend/) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](#running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](#deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
+Coming soon
