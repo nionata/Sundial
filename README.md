@@ -17,7 +17,7 @@ Simple session based web app that allows remote teams to find meeting availbilit
 ## Usage
 
 ### Getting Started
-1. Go to http://nicholasionata.com/Sundial/#generate-link
+1. Go to https://sundialapp.herokuapp.com/#generate-link
 1. Enter a team name and click 'Create Team' 
 1. Click 'Add a teammate...'
 1. Enter your name, the time you will be begin to be available, and the latest you will be available
@@ -72,7 +72,7 @@ For now just follow the current coding styles and make sure to document your cha
 
 #### `npm start`
 
-Then open [http://localhost:3000/Sundial/](http://localhost:3000/Sundial/) to view it in the browser.
+Then open [http://localhost:3000/](http://localhost:3000/Sundial/) to view it in the browser.
 
 ## Credits
 Thank you to [@tropicalchancer](https://github.com/tropicalchancer) for all his advice along the way and for his immense work on the [Chingu Cohorts](https://tropicalchancer.github.io/projectus/) where the project started.
