@@ -23,8 +23,8 @@ import './index.css'
 
 ReactDOM.render(
     <Router history={browserHistory} >
-        <Route path="/Sundial/" component={LandingPage} />
-        <Route path="/Sundial/team/:id" component={App} />
+        <Route path="/" component={LandingPage} />
+        <Route path="/team/:id" component={App} />
         <Route path='*' component={NotFound} />
     </Router>,
     document.getElementById('root')

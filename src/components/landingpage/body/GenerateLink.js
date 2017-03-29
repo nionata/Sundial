@@ -19,7 +19,7 @@ class GenerateLink extends Component {
                 name: inputName.value
             }).then(function() {
                 //this.props.router.push("/Sundial/team/" + newRef.key)
-                window.location.replace("/Sundial/team/" + newRef.key)
+                window.location.replace("/team/" + newRef.key)
             })
         } else {
             alert("You didn't enter a team name!");
