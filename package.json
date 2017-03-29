@@ -1,8 +1,8 @@
 {
-  "name": "sundial-frontend",
+  "name": "sundial",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nicholasionata.com/Sundial/",
+  "homepage": "https://sundialapp.herokuapp.com//Sundial/",
   "devDependencies": {
     "gh-pages": "^0.12.0",
     "react-scripts": "0.8.5",
