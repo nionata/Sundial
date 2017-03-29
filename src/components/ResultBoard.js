@@ -8,12 +8,19 @@ class ResultBoard extends React.Component {
         this.state = {
             isLoading: true,
             isAvail: true,
+            isEmpty: true,
             teamStart: "",
             teamEnd: ""
         }
     }
 
     milToStandard(hour, minutes) {
+        if(this.props.members.length > 1) {
+            this.setState({
+                isEmpty: false
+            })
+        }
+
         var identifier = 'AM'; //Initialize AM PM identifier
 
         if(hour === 12){ //If hour is 12 then should set AM PM identifier to PM
@@ -111,13 +118,17 @@ class ResultBoard extends React.Component {
                     <h2>Your Team's Availability</h2>
                     {
                         !this.state.isLoading ? (
-                            this.state.isAvail ? (
-                                <p>Your team is available between {this.state.teamStart} and {this.state.teamEnd} your time!</p>
+                            !this.state.isEmpty ? (
+                                this.state.isAvail ? (
+                                    <p>Your team is available between {this.state.teamStart} and {this.state.teamEnd} your time!</p>
+                                ) : (
+                                    <p>There is no availability between the team.</p>
+                                )
                             ) : (
-                                <p>There is no availability between the team.</p>
+                                <p>Two or more members are required to check availability!</p>
                             )
                         ) : (
-                            <p>Loading. </p>
+                            <p>Loading.</p>
                         )
                     }
                 </div>
